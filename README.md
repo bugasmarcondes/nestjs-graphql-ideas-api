@@ -70,3 +70,19 @@ A place to see and post ideas in the style of reddit and twitter
 - nestjs-graphql-ideas-api/backend/ormconfig.json
 - nestjs-graphql-ideas-api/backend/src/app.module.ts
 - nestjs-graphql-ideas-api/backend/src/idea/idea.entity.ts
+
+## CRUD operations
+- nest g mo idea
+    - generates nestjs-graphql-ideas-api/backend/src/idea/idea.module.ts
+- nest g controller idea
+    - generates nestjs-graphql-ideas-api/backend/src/idea/idea.controller.ts
+    - generates nestjs-graphql-ideas-api/backend/src/idea/idea.controller.spec.ts
+- nest g service idea
+    - generates nestjs-graphql-ideas-api/backend/src/idea/idea.service.ts
+    - generates nestjs-graphql-ideas-api/backend/src/idea/idea.service.spec.ts
+- nestjs-graphql-ideas-api/backend/src/idea/idea.controller.ts
+    - first we declare the method signature, and after creating module and service, we write the actual implementation
+- nestjs-graphql-ideas-api/backend/src/idea/idea.module.ts
+- nestjs-graphql-ideas-api/backend/src/idea/idea.service.ts
+- nestjs-graphql-ideas-api/backend/src/idea/idea.dto.ts
+- nestjs-graphql-ideas-api/backend/src/app.module.ts
