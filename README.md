@@ -42,6 +42,26 @@ A place to see and post ideas in the style of reddit and twitter
     - sudo launchctl stop <name> (kill process)
         - <name> = com.edb.launchd.postgresql-12
 
+- Error TS2416: Property 'intercept'
+    ````
+    [16:13:40] Starting compilation in watch mode...
+    src/shared/logging.interceptor.ts:12:3 - error TS2416: Property 'intercept' in type 'LoggingInterceptor' is not assignable to the same property in base type 'NestInterceptor<any, any>'.
+    Type '(context: ExecutionContext, call$: Observable<any>) => Observable<any>' is not assignable to type '(context: ExecutionContext, next: CallHandler<any>) => Observable<any> | Promise<Observable<any>>'.
+    Types of parameters 'call$' and 'next' are incompatible.
+    Type 'CallHandler<any>' is missing the following properties from type 'Observable<any>': _isScalar, source, operator, lift, and 6 more.
+    12   intercept(
+    ~~~~~~~~~
+    [16:13:43] Found 1 error. Watching for file changes.
+    ````
+    - Solution, downgrade these packages
+        ````
+        "dependencies": {
+            "@nestjs/common": "^5.3.11",
+            "@nestjs/core": "^5.3.11",
+            "@nestjs/typeorm": "^5.2.2",
+            "rxjs": "^6.2.2",
+        ````
+
 ## PostgreSQL
 
 - psql ideas \<username\> (connect using a specific user)
@@ -86,3 +106,25 @@ A place to see and post ideas in the style of reddit and twitter
 - nestjs-graphql-ideas-api/backend/src/idea/idea.service.ts
 - nestjs-graphql-ideas-api/backend/src/idea/idea.dto.ts
 - nestjs-graphql-ideas-api/backend/src/app.module.ts
+
+## Errors and Logging
+
+Nest comes with a ***built-in exceptions*** layer which is responsible for processing all unhandled exceptions across an application. When an exception is not handled by your application code, it is caught by this layer, which then automatically sends an appropriate user-friendly response.
+````
+{
+  "statusCode": 500,
+  "message": "Internal server error"
+}
+````
+- Exception filters
+    - Are designed to add logging or use a different JSON schema based on some dynamic factors. They let you control the exact flow of control and the content of the response sent back to the client.
+- Interceptors, make it possible to:
+    - bind extra logic before / after method execution
+    - transform the result returned from a function
+    - transform the exception thrown from a function
+    - extend the basic function behavior
+    - completely override a function depending on specific conditions (e.g., for caching purposes)
+    
+- nestjs-graphql-ideas-api/backend/src/shared/http-error.filter.ts
+- nestjs-graphql-ideas-api/backend/src/app.module.ts
+- nestjs-graphql-ideas-api/backend/src/shared/logging.interceptor.ts
