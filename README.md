@@ -132,3 +132,12 @@ Nest comes with a ***built-in exceptions*** layer which is responsible for proce
 - nestjs-graphql-ideas-api/backend/src/shared/http-error.filter.ts
 - nestjs-graphql-ideas-api/backend/src/app.module.ts
 - nestjs-graphql-ideas-api/backend/src/shared/logging.interceptor.ts
+
+## Validation Errors
+
+- nestjs-graphql-ideas-api/backend/src/idea/idea.service.ts
+- yarn add class-transformer class-validator
+- check if the incoming object has the correct data type
+    - nestjs-graphql-ideas-api/backend/src/shared/validation.pipe.ts
+- nestjs-graphql-ideas-api/backend/src/idea/idea.dto.ts
+- nestjs-graphql-ideas-api/backend/src/idea/idea.controller.ts
