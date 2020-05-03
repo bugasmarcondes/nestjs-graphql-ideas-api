@@ -64,13 +64,17 @@ A place to see and post ideas in the style of reddit and twitter
 
 ## PostgreSQL
 
-- psql ideas \<username\> (connect using a specific user)
-- psql -U postgres (connect using postgres user)
-- create database ideas;
-- \c ideas
-- \dt
-- \d idea
-- \q
+- Connecting and creating database
+    - psql
+    - create database ideas;
+    - \c ideas
+- Connecting with a user
+    - psql ideas \<username\> (connect using a specific user)
+    - psql -U postgres (connect using postgres user)
+- Operations and queries
+    - \dt (lists all data types or only those that match pattern)
+    - \d idea (delete the database)
+    - \q (quits psql program)
 
 # Tutorial
 
