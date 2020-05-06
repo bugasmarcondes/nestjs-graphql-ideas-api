@@ -141,3 +141,29 @@ Nest comes with a ***built-in exceptions*** layer which is responsible for proce
     - nestjs-graphql-ideas-api/backend/src/shared/validation.pipe.ts
 - nestjs-graphql-ideas-api/backend/src/idea/idea.dto.ts
 - nestjs-graphql-ideas-api/backend/src/idea/idea.controller.ts
+
+## Users module
+
+- nest g mo user
+- nest g controller user
+- nest g service user
+- touch src/user/user.dto.ts
+- touch src/user/user.entity.ts
+- import user in app.module.ts
+- yarn add bcryptjs jsonwebtoken
+    - for generating users, we're going to need those packages
+- yarn add -D @types/jsonwebtoken @types/bcryptjs
+    - since we're in Typescript we're going to need the types for the respective modules
+- nestjs-graphql-ideas-api/backend/src/user/user.entity.ts
+- nestjs-graphql-ideas-api/backend/src/user/user.module.ts
+- nestjs-graphql-ideas-api/backend/src/user/user.dto.ts
+- nestjs-graphql-ideas-api/backend/src/user/user.controller.ts
+- nestjs-graphql-ideas-api/backend/src/user/user.service.ts
+- using JWT for login and register methods
+    - user.entity.ts, implementing methods hashPassword, toResponseObject, comparePassword, token
+    - user.service.ts, implemening methods login and register
+- nestjs-graphql-ideas-api/backend/.env
+- yarn start:dev
+- GET http://localhost:4000/api/users (check if there's any user in the database)
+- POST http://localhost:4000/register (check validation UserAlreadyExist, PasswordMissing)
+- POST http://localhost:4000/login (check if we can login)
