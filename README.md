@@ -170,7 +170,9 @@ Nest comes with a ***built-in exceptions*** layer which is responsible for proce
 
 ## Authentication
 
+- Decorators are helpful for anything you want to transparently wrap with extra functionality. These include memoization, enforcing access control and authentication, instrumentation and timing functions, logging, rate-limiting, and the list goes on.
 - Authorization Guards have a single responsibility. They determine whether a given request will be handled by the route handler or not, depending on certain conditions (like permissions, roles, ACLs, etc.) present at run-time.
+
 - nestjs-graphql-ideas-api/backend/src/shared/auth.guard.ts
 - nestjs-graphql-ideas-api/backend/src/user/user.controller.ts
 - nestjs-graphql-ideas-api/backend/src/user/user.decorator.ts
