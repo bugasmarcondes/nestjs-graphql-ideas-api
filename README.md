@@ -167,3 +167,10 @@ Nest comes with a ***built-in exceptions*** layer which is responsible for proce
 - GET http://localhost:4000/api/users (check if there's any user in the database)
 - POST http://localhost:4000/register (check validation UserAlreadyExist, PasswordMissing)
 - POST http://localhost:4000/login (check if we can login)
+
+## Authentication
+
+- Authorization Guards have a single responsibility. They determine whether a given request will be handled by the route handler or not, depending on certain conditions (like permissions, roles, ACLs, etc.) present at run-time.
+- nestjs-graphql-ideas-api/backend/src/shared/auth.guard.ts
+- nestjs-graphql-ideas-api/backend/src/user/user.controller.ts
+- nestjs-graphql-ideas-api/backend/src/user/user.decorator.ts
